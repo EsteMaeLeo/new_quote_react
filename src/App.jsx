@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Header from "./components/Header";
+import Button from "./components/Button";
 
 function App() {
   const [quantity, setQuantity] = useState(10000);
@@ -40,13 +41,7 @@ function App() {
     <div className="my-20 max-w-lg mx-auto bg-white shadow p-10">
       <Header />
       <div className="flex justify-between my-6">
-        <button
-          type="button"
-          className="h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-600 rounded-full hover:outline-none hover:ring-4 hover:ring-offset-2 hover:ring-lime-600"
-          onClick={handleClickMinus}
-        >
-          -
-        </button>
+        <Button />
         <button
           type="button"
           className="h-10 w-10 flex items-center justify-center font-bold text-white text-2xl bg-lime-600 rounded-full hover:outline-none hover:ring-4 hover:ring-offset-2 hover:ring-lime-600"
