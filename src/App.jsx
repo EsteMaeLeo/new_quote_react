@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Header from "./components/Header";
 import Button from "./components/Button";
-import formatMoney from './helpers/index.js'
+import formatMoney from "./helpers/index.js";
 
 function App() {
   const [quantity, setQuantity] = useState(10000);
@@ -42,15 +42,8 @@ function App() {
     <div className="my-20 max-w-lg mx-auto bg-white shadow p-10">
       <Header />
       <div className="flex justify-between my-6">
-        <Button 
-          operator='-'
-          fn={handleClickMinus}
-        />
-        <Button 
-          operator='+'
-          fn={handleClickAdd}
-        />
-
+        <Button operator="-" fn={handleClickMinus} />
+        <Button operator="+" fn={handleClickAdd} />
       </div>
       <input
         type="range"
@@ -61,9 +54,20 @@ function App() {
         step={STEP}
         value={quantity}
       />
+
       <p className="text-center my-10 text-5xl font-extrabold text-indigo-700">
         {formatMoney(quantity)}
       </p>
+
+      <h2 className="text-2xl font-extrabold text-gray-600 text-center">
+        Choose <span className="text-indigo-700">payment term</span>
+      </h2>
+
+      <select className="mt-5 w-full p-2 bg-white border border-gray-300 rounded-lg text-center text-xl font-bold text-gray-600">
+        <option value="6">6 months</option>
+        <option value="12">12 months</option>
+        <option value="24">24 months</option>
+      </select>
     </div>
   );
 }
