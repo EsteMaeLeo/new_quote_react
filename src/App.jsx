@@ -43,9 +43,11 @@ function App() {
       <div className="flex justify-between my-6">
         <Button 
           operator='-'
+          fn={handleClickMinus}
         />
         <Button 
           operator='+'
+          fn={handleClickAdd}
         />
 
       </div>
