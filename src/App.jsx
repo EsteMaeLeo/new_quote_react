@@ -6,7 +6,7 @@ import formatMoney from "./helpers/index.js";
 
 function App() {
   const [quantity, setQuantity] = useState(10000);
-  const [months, setMonths] = useState(6)
+  const [months, setMonths] = useState(6);
 
   const MIN = 0;
   const MAX = 20000;
@@ -64,14 +64,21 @@ function App() {
         Choose <span className="text-indigo-700">payment term</span>
       </h2>
 
-      <select className="mt-5 w-full p-2 bg-white border border-gray-300 rounded-lg text-center text-xl font-bold text-gray-600"
-      value={months}
-      onChange={e => setMonths(+e.target.value)}
+      <select
+        className="mt-5 w-full p-2 bg-white border border-gray-300 rounded-lg text-center text-xl font-bold text-gray-600"
+        value={months}
+        onChange={(e) => setMonths(+e.target.value)}
       >
         <option value="6">6 months</option>
         <option value="12">12 months</option>
         <option value="24">24 months</option>
       </select>
+
+      <div>
+        <h2>
+          Payment <span>Summary</span>
+        </h2>
+      </div>
     </div>
   );
 }
