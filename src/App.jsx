@@ -1,18 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./components/Header";
 import Button from "./components/Button";
-import {formatMoney, totalPay} from "./helpers/index.js";
+import { formatMoney, totalPay } from "./helpers/index.js";
 
 function App() {
   const [quantity, setQuantity] = useState(10000);
   const [months, setMonths] = useState(6);
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(totalPay(quantity, months));
+
+  useEffect(() => {
+    console.log("Component... Quantity change");
+
+    const resultPay = totalPay(quantity, months);
+    setTotal(resultPay);
+  }, [quantity, months]);
 
   const MIN = 0;
   const MAX = 20000;
   const STEP = 100;
-  console.log(quantity);
 
   function handleChange(e) {
     setQuantity(parseInt(e.target.value));
@@ -79,9 +85,13 @@ function App() {
         <h2 className="text-2xl font-extrabold text-gray-600 text-center">
           Payment <span className="text-indigo-700">Summary</span>
         </h2>
-      <p className="text-xl text-gray-600 text-center font-bold">{months} Months</p>
-      <p className="text-xl text-gray-600 text-center font-bold">Total Ammount</p>
-      <p className="text-xl text-gray-600 text-center font-bold">Months</p>
+        <p className="text-xl text-gray-600 text-center font-bold">
+          {months} Months
+        </p>
+        <p className="text-xl text-gray-600 text-center font-bold">
+          {formatMoney(total)} Ammount
+        </p>
+        <p className="text-xl text-gray-600 text-center font-bold">Months</p>
       </div>
     </div>
   );
