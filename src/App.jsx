@@ -7,14 +7,24 @@ import { formatMoney, totalPay } from "./helpers/index.js";
 function App() {
   const [quantity, setQuantity] = useState(10000);
   const [months, setMonths] = useState(6);
-  const [total, setTotal] = useState(totalPay(quantity, months));
+  //  const [total, setTotal] = useState(totalPay(quantity, months));
+  const [total, setTotal] = useState(0);
+  const [pay, Setpay] = useState(0);
 
   useEffect(() => {
     console.log("Component... Quantity change");
 
     const resultPay = totalPay(quantity, months);
     setTotal(resultPay);
-  }, [quantity, months]);
+
+    //month payment
+    Setpay(total / months);
+  }, [quantity, months, total]);
+
+  useEffect(() => {
+    //month payment
+    Setpay(total / months);
+  }, [total]);
 
   const MIN = 0;
   const MAX = 20000;
@@ -91,7 +101,9 @@ function App() {
         <p className="text-xl text-gray-600 text-center font-bold">
           {formatMoney(total)} Ammount
         </p>
-        <p className="text-xl text-gray-600 text-center font-bold">Months</p>
+        <p className="text-xl text-gray-600 text-center font-bold">
+          {formatMoney(pay)} Month
+        </p>
       </div>
     </div>
   );
