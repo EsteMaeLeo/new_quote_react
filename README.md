@@ -1,8 +1,24 @@
-# React + Vite
+# Project Loan Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
-Currently, two official plugins are available:
+## Built With
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- CSS
+- Javascript
+- HTML
+
+## Description:
+
+### Built a Loan Calculator to discover how much you could afford to borrow and what your monthly repayments might be.
+
+## Screenshot
+
+![image](https://github.com/EsteMaeLeo/leo_portfolio_dev/assets/89478789/3f59f58f-e44e-4e0b-9b35-3f049c49efba)
+
+## Contribution
+
+Made by Leonel Morales
+
+### ©️2024 Best Loan Calculator
